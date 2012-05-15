@@ -30,15 +30,14 @@ library
     exposed-modules:
         Data.Nat
 
-    -- not sure how or if to constrain base...
     build-depends:
-        base       >= 4   && < 5,
+        base       >= 3   && < 5,
         semigroups >= 0.7 && < 0.9
 
-    -- here either
+    -- not sure what version constraints to use here
     if impl(ghc)
         build-depends: ghc-prim == 0.2.*
-        cpp-options:   -DHAVE_TYPEABLE
+        cpp-options: -DHAVE_TYPEABLE
 
     if impl(ghc >= 7.2)
         cpp-options: -DHAVE_GENERIC
