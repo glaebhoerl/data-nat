@@ -36,10 +36,10 @@ library
 
     -- not sure what version constraints to use here
     if impl(ghc)
-        build-depends: ghc-prim == 0.2.*
         cpp-options: -DHAVE_TYPEABLE
 
     if impl(ghc >= 7.2)
+        build-depends: ghc-prim == 0.2.*
         cpp-options: -DHAVE_GENERIC
 
     ghc-options:
