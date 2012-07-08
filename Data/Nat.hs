@@ -23,6 +23,7 @@
 module Data.Nat (Nat(..), nat, foldNat, unfoldNat, infinity, diff) where
 
 import Control.Arrow            (first)
+import Data.Function            (fix)
 import Data.Ix                  (Ix(..))
 import Numeric.Natural.Internal (Whole(..))
 
@@ -111,7 +112,7 @@ unfoldNat f a = maybe Zero (succ . unfoldNat f) (f a)
 
 -- | Very big!
 infinity :: Nat
-infinity = succ infinity
+infinity = fix Succ
 
 -- | > diff n m | n >= m    = Right (n - m)
 --   >          | otherwise = Left  (m - n)
