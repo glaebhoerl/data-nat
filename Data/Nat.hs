@@ -63,9 +63,10 @@ instance Enum Nat where
                                     (\x -> either ((if x == 0 then Right else Left) . div x) (Right . div x))
                                     -- maybe this could be done simpler?
 
+-- | maxBound = 'infinity'. Not sure if this is polite.
 instance Bounded Nat where
     minBound = 0
-    maxBound = infinity -- is this polite?
+    maxBound = infinity
 
 instance Num Nat where
     (+) n       = foldNat n succ
