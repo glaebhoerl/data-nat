@@ -1,6 +1,6 @@
 name:          data-nat
 category:      Data, Math
-version:       0.1.1
+version:       0.1.2
 author:        Gábor Lehel
 maintainer:    Gábor Lehel <illissius@gmail.com>
 homepage:      http://github.com/glehel/data-nat
@@ -43,7 +43,7 @@ library
         cpp-options:      -DHAVE_GENERIC
 --        other-extensions: DeriveGeneric
 
-    if impl(ghc == 7.4)
+    if impl(ghc >= 7.2 && < 7.6)
         build-depends:    ghc-prim == 0.2.*
 
     ghc-options:
